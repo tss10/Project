@@ -1,0 +1,19 @@
+%h1 Список отчетов
+
+%table.table
+  %tr
+    %th Отчет
+    %th
+    %th
+    %th
+
+  - @reports.each do |report|
+    %tr
+      %td= report.report_text
+      %td= link_to 'Показать', report
+      %td= link_to 'Править', edit_report_path(report)
+      %td= link_to 'Удалить', report, :method => :delete, :data => { :confirm => 'Уверены?' }
+
+%br
+
+= link_to 'Новый отчет', new_report_path

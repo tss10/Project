@@ -1,0 +1,12 @@
+%h1 Показ отчета в HTML
+
+%table.table
+  %tr
+    %th Отчет
+
+    %tr
+      %td= @html_report
+
+= link_to 'Править', edit_report_path(@report)
+\|
+= link_to 'Назад', reports_path

@@ -1,0 +1,19 @@
+.navbar.navbar-default
+  .container
+    .navbar-header
+    %ul.nav.navbar-nav
+      %li{class: ('active' if controller_name=='reports')}=link_to "Отчеты",reports_path
+      %li{class: ('active' if controller_name=='information')}=link_to "Данные отчетов",  :controller => "information", :action=>"index"
+      -if User.edit?(@current_user)
+        %li{class: ('active' if controller_name=='users')}=link_to "Пользователи",users_path
+    %ul.nav.navbar-nav.navbar-right
+      -if @current_user
+        %li.dropdown
+          =link_to ?#,class: 'dropdown-toggle', data: {toggle: 'dropdown'} do
+            =@current_user.name
+            %span.caret
+          %ul.dropdown-menu
+            %li=link_to 'Выход',logout_path
+      -else
+        %li=link_to "Вход",login_path
+        %li=link_to "Регистрация",new_user_path

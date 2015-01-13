@@ -1,0 +1,38 @@
+ru:
+  app:
+    report: Отчет
+    information: Данные отчета
+
+
+  activerecord:
+    models:
+      user: Пользователь
+      information: Данные отчета
+    attributes:
+      report:
+        user_id: Пользователь
+        report_text: Отчет
+      information:
+        task_file: Путь файла задания
+        task_file: Путь файла кода
+        task_text: Задание
+        code_text: Код
+      user:
+        name: Имя
+        email: Адрес электронной почты
+        password: Пароль
+        password_confirmation: Пароль (повторно)
+        role: Роль
+  helpers:
+    sure: Вы уверены?
+    submit:
+      create: Сохранить
+      submit: Сохранить
+      update: Сохранить
+  views:
+    pagination:
+      first: ⇤
+      last: ⇥
+      previous: ←
+      next: →
+      truncate: …

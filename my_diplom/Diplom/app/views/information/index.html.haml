@@ -1,0 +1,21 @@
+%h1 Данные отчетов
+
+%table.table
+  %tr
+    %th Задание
+    %th Студент
+    %th
+    %th
+    %th
+
+  - @information.each do |information|
+    %tr
+      %td= information.task_text
+      %td= information.user.name
+      %td= link_to 'Показать', information
+      %td= link_to 'Править', edit_information_path(information)
+      %td= link_to 'Удалить', information, :method => :delete, :data => { :confirm => 'Уверены?' }
+
+%br
+
+= link_to 'Новые данные отчета', new_information_path

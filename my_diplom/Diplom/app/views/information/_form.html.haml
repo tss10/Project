@@ -1,0 +1,14 @@
+= form_for @information do |f|
+  =error_messages_for @information
+
+  .form-group
+    = f.label :task_file
+    = f.file_field :task_file
+  .form-group
+    = f.label :code_file
+    = f.file_field :code_file
+  .form-group
+    =f.label :user_id
+    =f.select :user_id, User.all.map{|c| [c.name,c.id]}, {},class: 'form-control'
+  .actions
+    = f.submit 'Сохранить'

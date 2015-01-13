@@ -1,0 +1,7 @@
+= form_for @report do |f|
+  =error_messages_for @report
+  .field
+    = f.label :report_text
+    = f.text_area :report_text
+  .actions
+    = f.submit 'Сохранить'
